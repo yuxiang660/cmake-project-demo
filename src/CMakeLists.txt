@@ -20,6 +20,16 @@ target_include_directories(${LIB_NAME} PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}
 )
 
+# export library
+install(TARGETS ${LIB_NAME} DESTINATION lib)
+
+# export public headers
+set(HEADERS
+    Break.h
+    BreakFactory.h
+)
+install(FILES ${HEADERS} DESTINATION include)
+
 # set test name
 set(TEST_NAME unit_test)
 

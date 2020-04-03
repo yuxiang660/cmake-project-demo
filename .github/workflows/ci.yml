@@ -12,7 +12,7 @@ jobs:
       with:
           submodules: true
     - name: configure
-      run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=debug ..
+      run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Debug ..
     - name: build
       run: cmake --build build
     - name: test
