@@ -1,9 +1,6 @@
 name: Doc Publication
 
-on:
-  push:
-    paths:
-    - 'src/**'
+on: [push]
 
 jobs:
   build:
@@ -11,8 +8,12 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v1
-      - name: Install
+      - name: install
         run: sudo apt-get update && sudo apt-get install -y doxygen && sudo apt-get install -y graphviz
+      - name: configure
+        run: mkdir build && cd build && cmake -DCMAKE_BUILD_TYPE=Debug ..
+      - name: build doc
+        run: cd build && make doxygen
       - name: doc deploy
         uses: peaceiris/actions-gh-pages@v2
         env:
