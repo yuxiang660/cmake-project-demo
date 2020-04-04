@@ -8,6 +8,7 @@ This is a demo for cmake project with google test and ci workflow.
 > cd build
 > cmake ..
 > make
+> make doxygen
 > ./bin/unit_test
 > ./bin/example_simple
 ```

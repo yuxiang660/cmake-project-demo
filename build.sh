@@ -18,8 +18,10 @@ mkdir -p $BUILD_DIR \
 
 if [ "$*" = "" ] ; then
     make
+elif [ "$*" = "doc" ] ; then
+    make doxygen
 elif [ "$*" = "install" ] ; then
     cd src && make install
 else
-    echo "Usage: './build.sh' or './build.sh install'"
+    echo "Usage: 1. './build.sh', 2. './build doc', 3. './build.sh install'"
 fi
