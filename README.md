@@ -18,6 +18,10 @@ This is a demo for cmake project with google test and ci workflow.
 ```
 > build.sh
 ```
+### Build documentation
+```
+> build.sh doc
+```
 ### Install library and header files of the project
 ```
 > build.sh install
