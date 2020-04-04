@@ -1,10 +1,10 @@
 # find all source cpp files in src folder
-file(GLOB_RECURSE SRC_CPP RELATIVE ${CMAKE_CURRENT_LIST_DIR} "*.cpp")
+file(GLOB_RECURSE SRC_CPP ${CMAKE_CURRENT_LIST_DIR} "*.cpp")
 list(FILTER SRC_CPP EXCLUDE REGEX ".*Test.cpp$")
 
 # find all test cpp files in src folder
 # the filename of test files should end up with "Test.cpp"
-file(GLOB_RECURSE TEST_CPP RELATIVE ${CMAKE_CURRENT_LIST_DIR} "*Test.cpp")
+file(GLOB_RECURSE TEST_CPP ${CMAKE_CURRENT_LIST_DIR} "*Test.cpp")
 
 # set library name
 set(LIB_NAME demo)
@@ -19,6 +19,9 @@ include_directories(${CMAKE_CURRENT_LIST_DIR})
 target_include_directories(${LIB_NAME} PUBLIC
     ${CMAKE_CURRENT_LIST_DIR}
 )
+
+# add doc
+add_doxygen(${LIB_NAME})
 
 # export library
 install(TARGETS ${LIB_NAME} DESTINATION lib)

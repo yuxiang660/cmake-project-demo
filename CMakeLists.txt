@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8.2)
 
 project(cmake_project_demo)
 
+include(doxygen/doxygen.cmake)
 include(CTest)
 
 if (CMAKE_VERSION VERSION_LESS 3.2)
